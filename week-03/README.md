@@ -2,12 +2,12 @@
 
 **Topik:** Migration, Seeder, DB Façade, Query Builder, dan Eloquent ORM
 
-**Nama:** Rachmad Febriananda
-**NIM:** 244107020095
+**Nama:** Rachmad Febriananda  
+**NIM:** 244107020095  
 **Kelas:** TI-2F
 
-**Link Repository Project Jobsheet 3:** https://github.com/rachmadnanda/Pemrograman-Web-Lanjut/tree/main/week-02/POS
-**Link Repository Project Studi Kasus:** https://github.com/rachmadnanda/Pemrograman-Web-Lanjut/tree/main/week-03/wedbook
+**Link Repository Project Jobsheet 3:** https://github.com/rachmadnanda/Pemrograman-Web-Lanjut/tree/main/week-02/POS  
+**Link Repository Project Studi Kasus:** https://github.com/rachmadnanda/Pemrograman-Web-Lanjut/tree/main/week-03/wedbook  
 **Untuk laporan Jobsheet 3 dan Studi Kasus semuanya menjadi satu di dalam file README week-03 ini.**
 
 ---
