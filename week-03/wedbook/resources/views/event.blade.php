@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Event SITAMU</title>
+    <title>Data Event Wedbook</title>
 </head>
 <body>
     <h1>Data Event (DB Facade)</h1>
