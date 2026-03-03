@@ -23,8 +23,7 @@ Berhasil membuat database dan mengonfigurasi koneksinya pada file `.env` Laravel
 ## Praktikum 2: Pembuatan File Migrasi
 
 Melakukan pembuatan file migrasi untuk tabel database dan mengeksekusinya menggunakan perintah migrate.
-![Hasil Praktikum 2](./screenshots-jobsheet3/prak21.png)
-![Hasil Praktikum 2.1](./screenshots-jobsheet3/prak22.png)
+![Hasil Praktikum 2](./screenshots-jobsheet3/prak2.png)
 
 ## Praktikum 3: Seeder
 
@@ -37,6 +36,8 @@ Melakukan pengisian data awal (_dummy data_) secara otomatis ke dalam database m
 Menerapkan operasi database menggunakan metode **DB Facade (Raw Query)** untuk mengeksekusi sintaks SQL murni.
 ![Hasil Praktikum 4](./screenshots-jobsheet3/prak41.png)
 ![Hasil Praktikum 4.1](./screenshots-jobsheet3/prak42.png)
+![Hasil Praktikum 4.2](./screenshots-jobsheet3/prak43.png)
+![Hasil Praktikum 4.3](./screenshots-jobsheet3/prak44.png)
 
 ## Praktikum 5: Implementasi Query Builder
 
