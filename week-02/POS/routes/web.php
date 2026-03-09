@@ -34,3 +34,17 @@ Route::get('/kategori', [KategoriController::class, 'index']);
 
 // 7. Halaman Supplier
 Route::get('/supplier', [SupplierController::class, 'index']);
+
+// Route untuk nampilin form
+Route::get('/user/tambah', [UserController::class, 'tambah']); 
+// Route untuk memproses data dari form
+Route::post('/user/tambah_simpan', [UserController::class, 'tambah_simpan']);
+
+// Route untuk menampilkan form ubah data
+Route::get('/user/ubah/{id}', [UserController::class, 'ubah']);
+
+// Route untuk memproses simpan perubahan data (pakai PUT)
+Route::put('/user/ubah_simpan/{id}', [UserController::class, 'ubah_simpan']);
+
+// Route untuk menghapus data
+Route::get('/user/hapus/{id}', [UserController::class, 'hapus']);
