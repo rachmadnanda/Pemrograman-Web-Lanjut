@@ -2,11 +2,11 @@
 
 **Topik:** Instalasi Filament PHP v4, CRUD Resource, dan Implementasi Relasi Database
 
-## 📝 Deskripsi Proyek
+## Deskripsi Proyek
 
 Praktikum ini bertujuan untuk membangun sistem admin panel modern menggunakan Laravel 11 dan Filament PHP v4. Fokus utama meliputi proses instalasi, pembuatan fitur CRUD (Create, Read, Update, Delete) otomatis, serta pengelolaan relasi antar tabel database untuk entitas Kategori dan Postingan.
 
-## 🛠️ Persiapan Lingkungan (Requirements)
+## Persiapan Lingkungan (Requirements)
 
 Sebelum memulai, pastikan sistem memenuhi spesifikasi minimum berikut:
 
@@ -15,13 +15,14 @@ Sebelum memulai, pastikan sistem memenuhi spesifikasi minimum berikut:
 - Tailwind CSS: $\geq$ 4.0
 - Database: MySQL atau SQLite
 
-## 🚀 Langkah-Langkah Praktikum
+## Langkah-Langkah Praktikum
 
 ### 1. Jobsheet 1: Instalasi dan Setup Dasar
 
 Langkah awal adalah menyiapkan kerangka kerja Laravel dan mengintegrasikan Filament sebagai admin panel utama.
 
 #### Instalasi Laravel
+
 Membuat proyek baru dengan nama PraktikumPWL.
 
 ```bash
@@ -30,6 +31,7 @@ cd PraktikumPWL
 ```
 
 #### Konfigurasi Database
+
 Mengatur file `.env` untuk menghubungkan aplikasi ke MySQL.
 
 ```
@@ -40,6 +42,7 @@ DB_PASSWORD=
 ```
 
 #### Instalasi Filament
+
 Menambahkan paket Filament v4 dan memasang Panel Builder.
 
 ```bash
@@ -48,6 +51,7 @@ php artisan filament:install --panels
 ```
 
 #### Membuat User Admin
+
 Membuat akun kredensial untuk masuk ke dashboard.
 
 ```bash
@@ -62,6 +66,7 @@ php artisan make:filament-user
 Menggunakan fitur Resource Filament untuk mengelola data user secara otomatis tanpa menulis banyak kode manual.
 
 #### Generate Resource
+
 Perintah ini akan membuat file Resource utama, Pages, dan Schemas.
 
 ```bash
@@ -69,6 +74,7 @@ php artisan make:filament-resource User
 ```
 
 #### Modifikasi Form Schema
+
 Mengatur inputan pada file `UserForm.php`.
 
 ```php
@@ -83,6 +89,7 @@ public static function configure(Schema $schema): Schema {
 ```
 
 #### Modifikasi Table Schema
+
 Menampilkan kolom data pada file `UsersTable.php`.
 
 ```php
@@ -96,6 +103,7 @@ public static function configure(Table $table): Table {
 ```
 
 #### Kustomisasi Ikon
+
 Mengubah ikon navigasi sidebar menggunakan Heroicons.
 
 ```php
@@ -107,6 +115,7 @@ protected static ?string $navigationIcon = 'heroicon-o-user-group';
 Membangun struktur database yang lebih kompleks dengan relasi One-to-Many antara Kategori dan Postingan.
 
 #### Migration Category & Post
+
 Menentukan struktur tabel melalui file migrasi.
 
 ```php
@@ -131,6 +140,7 @@ Schema::create('posts', function (Blueprint $table) {
 ```
 
 #### Eloquent Relationship
+
 Mendefinisikan relasi pada file `Model Post.php`.
 
 ```php
@@ -142,7 +152,7 @@ public function category(): BelongsTo {
 }
 ```
 
-## 📊 Analisis & Diskusi Materi
+## Analisis & Diskusi Materi
 
 - **Konsep Resource:** Resource adalah jantung dari Filament yang secara otomatis memetakan Model Laravel ke antarmuka admin yang lengkap (List, Create, Edit, Delete).
 
@@ -152,7 +162,7 @@ public function category(): BelongsTo {
 
 - **Otomatisasi Slug:** Dengan Filament, kita bisa membuat slug secara reaktif dari input judul menggunakan metode `live(onBlur: true)` dan `afterStateUpdated`.
 
-## ✅ Kesimpulan
+## Kesimpulan
 
 Praktikum ini berhasil mengimplementasikan:
 
