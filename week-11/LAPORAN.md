@@ -30,17 +30,19 @@ Langkah pertama adalah menambahkan fungsionalitas pencarian teks agar pengguna d
 1. Buka file PostsTable.php.
 2. Pada method columns(), tambahkan method \-\>searchable() pada kolom yang ingin dijadikan acuan pencarian, yaitu title, slug, dan category.name .
 
+```
 PHP
 
-TextColumn::make('title')  
- \-\>sortable()  
- \-\>searchable(),  
-TextColumn::make('slug')  
- \-\>sortable()  
- \-\>searchable(),  
-TextColumn::make('category.name')  
- \-\>sortable()  
+TextColumn::make('title')
+ \-\>sortable()
  \-\>searchable(),
+TextColumn::make('slug')
+ \-\>sortable()
+ \-\>searchable(),
+TextColumn::make('category.name')
+ \-\>sortable()
+ \-\>searchable(),
+```
 
 **Hasil:** Search bar akan otomatis muncul di atas tabel, dan kita dapat mencari data berdasarkan Title, Slug, maupun Category.
 
@@ -50,30 +52,34 @@ Pencarian teks biasa kurang efektif untuk mencari tanggal, sehingga kita membutu
 
 1. Tambahkan _use statement_ berikut di bagian atas file PostsTable.php:
 
+```
 PHP
 
-use Filament\\Tables\\Filters\\Filter;  
+use Filament\\Tables\\Filters\\Filter;
 use Filament\\Forms\\Components\\DatePicker;
+```
 
 2. Pada method \-\>filters(), buat filter baru untuk created_at dengan komponen DatePicker .
 3. Tambahkan custom query menggunakan whereDate() agar filter benar-benar melakukan filtering data di database berdasarkan tanggal yang dipilih .
 
+```
 PHP
 
-\-\>filters(\[  
- Filter::make('created_at')  
- \-\>label('Creation Date')  
- \-\>schema(\[  
- DatePicker::make('created_at')  
- \-\>label('Select Date:'),  
- \])  
- \-\>query(function ($query, $data) {  
-            return $query\-\>when(  
-                $data\['created\_at'\],  
-                fn ($query, $date) \=\> $query\-\>whereDate('created_at', $date)  
- );  
- }),  
+\-\>filters(\[
+ Filter::make('created_at')
+ \-\>label('Creation Date')
+ \-\>schema(\[
+ DatePicker::make('created_at')
+ \-\>label('Select Date:'),
+ \])
+ \-\>query(function ($query, $data) {
+            return $query\-\>when(
+                $data\['created\_at'\],
+                fn ($query, $date) \=\> $query\-\>whereDate('created_at', $date)
+ );
+ }),
 \])
+```
 
 ### **3\. Membuat Filter Berdasarkan Relasi (Select Filter)**
 
@@ -81,19 +87,23 @@ Selain tanggal, kita juga bisa membuat dropdown filter untuk kategori menggunaka
 
 1. Tambahkan _use statement_ berikut:
 
+```
 PHP
 
 use Filament\\Tables\\Filters\\SelectFilter;
+```
 
 2. Tambahkan SelectFilter di dalam array \-\>filters().
 3. Gunakan method \-\>relationship() untuk menarik data kategori secara otomatis.
 
+```
 PHP
 
-SelectFilter::make('category_id')  
- \-\>label('Category')  
- \-\>relationship('category', 'name')  
+SelectFilter::make('category_id')
+ \-\>label('Category')
+ \-\>relationship('category', 'name')
  \-\>preload(),
+```
 
 **Hasil:** Dropdown kategori akan muncul di menu filter, dan data otomatis disaring saat kategori dipilih.
 
