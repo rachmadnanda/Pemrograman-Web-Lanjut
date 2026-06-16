@@ -3,7 +3,8 @@
 **NIM: 244107020095**  
 **Kelas: TI-2F**
 
-Link repository project yang dipakai (pertemuan sebelumnya): https://github.com/rachmadnanda/Pemrograman-Web-Lanjut/tree/main/week-05/PraktikumPWL
+Link repository project yang dipakai (pertemuan sebelumnya): https://github.com/rachmadnanda/Pemrograman-Web-Lanjut/tree/main/week-05/PraktikumPWL  
+Link Commit: https://github.com/rachmadnanda/Pemrograman-Web-Lanjut/commit/8c675b1663471ce337246e1ae1ce418fd2582435
 
 ## **Laporan Praktikum: Jobsheet 1**
 
