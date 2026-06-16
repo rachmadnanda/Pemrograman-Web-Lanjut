@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Models\Tag;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\ColorPicker;
@@ -60,7 +61,21 @@ class PostForm
                         ]),
                     Section::make("Meta Information")
                         ->schema([
-                            TagsInput::make("tags"),
+                            Select::make('tags')
+                                ->multiple()
+                                ->relationship('tags', 'name')
+                                ->preload()
+                                ->createOptionForm([
+                                    TextInput::make('name')
+                                        ->required()
+                                        ->live(onBlur: true)
+                                        ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', \Illuminate\Support\Str::slug($state)) : null),
+                                    TextInput::make('slug')
+                                        ->disabled()
+                                        ->dehydrated()
+                                        ->required()
+                                        ->unique(Tag::class, 'slug', ignoreRecord: true),
+                                ]),
                             Checkbox::make("published"),
                             DateTimePicker::make("published_at")
                                 ->default(now()),
