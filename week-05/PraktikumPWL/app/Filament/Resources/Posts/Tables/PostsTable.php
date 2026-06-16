@@ -26,12 +26,15 @@ class PostsTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('title')
+                    ->searchable()
                     ->sortable()
                     ->toggleable(),
                 TextColumn::make('slug')
+                    ->searchable()
                     ->sortable()
                     ->toggleable(),
                 TextColumn::make('category.name')
+                    ->searchable()
                     ->sortable()
                     ->toggleable(),
                 ColorColumn::make('color')

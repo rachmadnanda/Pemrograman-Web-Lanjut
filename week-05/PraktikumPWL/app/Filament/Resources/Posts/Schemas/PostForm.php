@@ -41,9 +41,10 @@ class PostForm
                             Select::make("category_id")
                                 ->relationship("category", "name")
                                 ->required()
+                                ->searchable()
                                 ->preload(),
                             ColorPicker::make("color"),
-                            MarkdownEditor::make("content")
+                            MarkdownEditor::make("body")
                                 ->columnSpanFull(),
                         ])->columns(2), 
                 ])->columnSpan(2),
